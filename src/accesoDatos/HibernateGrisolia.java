@@ -75,8 +75,9 @@ public class HibernateGrisolia implements I_Acceso_Datos {
 		
 		
 		for (Deposito miDep : depositos.values()) {
-			s.beginTransaction();		
-			s.update(miDep);
+			s.beginTransaction();
+			Deposito miDeposito = miDep;
+			s.update(miDeposito);
 			s.getTransaction().commit();
 		}
 		
@@ -94,7 +95,8 @@ public class HibernateGrisolia implements I_Acceso_Datos {
 		
 		for (Dispensador miDisp : dispensadores.values()) {
 			s.beginTransaction();
-			s.update(miDisp);
+			Dispensador miDispensador = miDisp;
+			s.update(miDispensador);
 			s.getTransaction().commit();
 		}
 		
